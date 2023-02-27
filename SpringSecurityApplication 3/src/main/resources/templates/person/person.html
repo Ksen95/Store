@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей: </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12 col-12 text-center ">
+                <h1>Смартик</h1>
+            </div>
+
+            <div class="col-md-3 col-sm-12 col-12 text-center align-self-center" >
+                <form method="get" th:action="@{/admin/person/sorting_and_searching_and_filters}">
+                    <input type="submit" value="Поиск пользователей">
+                </form>
+            </div>
+            <div class="col-md-3 col-sm-12 col-12 text-center align-self-center">
+                <form method="get" th:action="@{/admin}">
+                    <input type="submit" value="Личный кабинет">
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <hr>
+    <h3>Список пользователей: </h3>
+    <hr>
+
+    <div class="catalog-filters col-md-6 col-sm-12 col 12" th:each="element : ${person}">
+
+        <p th:text="'Фамилия: ' + ${element.getLastname()}"/>
+        <p th:text="'Имя: ' + ${element.getFirstname()}"/>
+        <p th:text="'Логин: ' + ${element.getLogin()}"/>
+        <p th:text="'Роль: ' + ${element.getRole()}"/>
+        <p th:text="'Email: ' + ${element.getEmail()}"/>
+        <p th:text="'Номер телефона: ' + ${element.getPhoneNumber()}"/>
+
+        <br>
+        <form method="get" th:action="@{/admin/person/edit/{id}(id=${element.getId()})}">
+            <input class="btn btn-outline-info text-align-center" type="submit" value="Редактировать пользователя">
+        </form>
+        <br>
+        <form method="get" th:action="@{/admin/person/delete/{id}(id=${element.getId()})}">
+            <input class="btn btn-outline-info text-align-center"  type="submit" value="Удалить пользователя">
+        </form>
+
+    </div>
+</div>
+</body>
+
+</html>

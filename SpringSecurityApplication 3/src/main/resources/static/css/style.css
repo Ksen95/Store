@@ -1,0 +1,81 @@
+header{
+    background-color: lightcyan;
+    padding: 10px;
+}
+header input{
+    background: none!important;
+    border: none!important;
+    font-size: 16px;
+}
+header a{
+    font-size: 16px;
+}
+a {
+    color: black !important;
+    text-decoration: none !important;
+    font-size: 20px;
+
+}
+a:hover{
+    color: indigo!important;
+    font-size: 20px!important;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.inside-tilda, .inside-tilda *, .inside-tilda :after, .inside-tilda :before, :not(.tilda-wrapper *) {
+    box-sizing: border-box;
+}
+
+legend{
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-decoration: solid;
+}
+
+img{
+    max-height: 360px;
+    max-width: 310px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    transition: transform 0.25s;
+
+}
+.photo:hover img {
+    transform: scale(1.1);
+}
+.photo {
+    overflow: hidden;
+}
+
+.cart{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid lightcyan  ;
+    overflow: hidden;
+}
+.cart:hover img{
+    transform: scale(1.1);
+}
+.catalog-filters
+{
+    border: 1px solid lightcyan  ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+.cartAll{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.cartAll:hover img {
+    transform: scale(1.1);
+}
